@@ -1,0 +1,33 @@
+<?php
+
+namespace App\Livewire;
+
+use Illuminate\Support\Facades\Auth;
+use Livewire\Component;
+
+class Login extends Component
+{
+    public $email, $password;
+
+    protected $rules = [
+        'email' => 'required|email',
+        'password' => 'required',
+    ];
+
+    public function login()
+    {
+        $this->validate();
+
+        if (Auth::attempt(['email' => $this->email, 'password' => $this->password])) {
+            session()->regenerate();
+            return redirect()->intended(route('dashboard'));
+        }
+
+        session()->flash('error', 'Email atau password salah.');
+    }
+
+    public function render()
+    {
+        return view('auth.login'); // Tetap mengarah ke view login kamu di resources/views/auth/login.blade.php
+    }
+}

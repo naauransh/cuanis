@@ -1,0 +1,30 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Livewire\TransaksiCreate;
+
+Route::get('/', function () {
+    return view('landing');
+});
+
+
+// Halaman Autentikasi pakai View biasa yang memuat Livewire
+Route::get('/login', function () {
+    return view('auth.login'); // atau auth.masuk
+})->name('login');
+
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
+
+// Halaman Utama (Membutuhkan Login)
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', function () { return view('dashboard'); })->name('dashboard');
+    
+    Route::get('/transaksi', function () { return view('transaksi'); })->name('transaksi.index');
+    Route::get('/transaksi/tambah', TransaksiCreate::class)->name('transaksi.create');
+    
+    Route::get('/budget', function () { return view('budget'); })->name('budget.index');
+    Route::get('/kategori', function () { return view('kategori'); })->name('kategori.index');
+    Route::get('/kategori/tambah', function () { return view('tambah-kategori'); })->name('kategori.create');
+});
