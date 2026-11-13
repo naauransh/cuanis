@@ -5,9 +5,10 @@ use App\Livewire\Auth\Login;
 use App\Livewire\Auth\Register;
 use App\Livewire\Dashboard;
 use App\Http\Controllers\TransaksiController;
-use App\Models\Transaksi;
+// use App\Models\Transaksi;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Livewire\Profile;
 
 Route::view('/', 'welcome')->name('home');
 
@@ -52,5 +53,8 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/kategori', \App\Livewire\KategoriIndex::class)
         ->name('kategori.index');
+
+    Route::get('/profile', Profile::class)
+    ->name('profile');    
 
 });

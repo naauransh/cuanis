@@ -67,7 +67,7 @@
             </a>
 
             <span class="avatar-user"
-                aria-label="Akun {{ auth()->user()->name }}">{{ mb_strtoupper(mb_substr(auth()->user()->name, 0, 1)) }}</span>
+                aria-label="Akun {{ auth()->user()->name }}"> <a href="{{ route('profile') }}">{{ mb_strtoupper(mb_substr(auth()->user()->name, 0, 1)) }}</a></span>
         </div>
     </header>
 
