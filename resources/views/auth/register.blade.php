@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Daftar · Cuanis</title>
-<link rel="preconnect" href="[https://fonts.googleapis.com](https://fonts.googleapis.com)">
-<link href="[https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap](https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap)" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=DM+Sans:wght@400;500;700&family=Caveat:wght@600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('assets/style.css') }}">
 <!-- Tailwind CSS CDN -->
-<script src="[https://cdn.tailwindcss.com](https://cdn.tailwindcss.com)"></script>
+<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 <header class="site-header">
@@ -17,7 +17,24 @@
       <a href="{{ url('/') }}">Beranda</a>
       <a href="{{ route('login') }}">Masuk</a>
     </nav>
-    <a class="logo" href="{{ url('/') }}">cuanis</a>
+    <a class="logo" href="{{ url('/') }}" style="
+        font-family: 'Instrument Serif', Georgia, serif;
+        font-size: 38px;
+        font-weight: 400;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: #6B0F2B;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+        text-shadow: 2px 2px 0px #FFFDF7;
+        line-height: 1;
+        transition: transform 0.15s ease;
+    " onmouseover="this.style.transform='scale(1.05)';"
+       onmouseout="this.style.transform='scale(1)';">
+        CUANIS<span style="font-family: 'Caveat', cursive; font-size: 26px; color: #BE123C; transform: rotate(-12deg); display: inline-block; margin-top: -8px;">✦</span>
+    </a>
     <span class="avatar-user" aria-label="Akun Sari">S</span>
   </div>
 </header>

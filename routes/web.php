@@ -47,4 +47,10 @@ Route::middleware('auth')->group(function () {
         return redirect('/login');
     })->name('logout');
 
+    Route::get('/budget', \App\Livewire\BudgetIndex::class)
+        ->name('budget.index');
+
+    Route::get('/kategori', \App\Livewire\KategoriIndex::class)
+        ->name('kategori.index');
+
 });
