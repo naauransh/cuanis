@@ -46,7 +46,26 @@
                     </button>
                 </form>
             </nav>
-            <a class="logo" href="{{ url('/dashboard') }}">cuanis</a>
+
+            <a class="logo" href="{{ url('/dashboard') }}" style="
+                font-family: 'Instrument Serif', Georgia, serif;
+                font-size: 38px;
+                font-weight: 400;
+                letter-spacing: 1.5px;
+                text-transform: uppercase;
+                color: #6B0F2B;
+                text-decoration: none;
+                display: inline-flex;
+                align-items: center;
+                gap: 4px;
+                text-shadow: 2px 2px 0px #FFFDF7;
+                line-height: 1;
+                transition: transform 0.15s ease;
+            " onmouseover="this.style.transform='scale(1.05)';"
+               onmouseout="this.style.transform='scale(1)';">
+                CUANIS<span style="font-family: 'Caveat', cursive; font-size: 26px; color: #BE123C; transform: rotate(-12deg); display: inline-block; margin-top: -8px;">✦</span>
+            </a>
+
             <span class="avatar-user"
                 aria-label="Akun {{ auth()->user()->name }}">{{ mb_strtoupper(mb_substr(auth()->user()->name, 0, 1)) }}</span>
         </div>

@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="id">
 
@@ -26,7 +25,24 @@
         <a href="#cara-kerja">Cara kerja</a>
       </nav>
 
-      <a class="logo" href="{{ route('home') }}">cuanis</a>
+      <a class="logo" href="{{ route('home') }}" style="
+          font-family: 'Instrument Serif', Georgia, serif;
+          font-size: 38px;
+          font-weight: 400;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: #6B0F2B;
+          text-decoration: none;
+          display: inline-flex;
+          align-items: center;
+          gap: 4px;
+          text-shadow: 2px 2px 0px #FFFDF7;
+          line-height: 1;
+          transition: transform 0.15s ease;
+      " onmouseover="this.style.transform='scale(1.05)';"
+         onmouseout="this.style.transform='scale(1)';">
+          CUANIS<span style="font-family: 'Caveat', cursive; font-size: 26px; color: #BE123C; transform: rotate(-12deg); display: inline-block; margin-top: -8px;">✦</span>
+      </a>
 
       <div class="hero-cta" style="gap:16px">
         @auth
